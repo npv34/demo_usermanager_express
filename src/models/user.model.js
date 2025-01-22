@@ -28,12 +28,12 @@ class UserModel extends BaseModel {
     }
 
     async updateUser(data, id) {
-        const {name, email, phone, city, money} = data;
+        const {name, email, phone, city, money, group_id} = data;
         const sql = `
         UPDATE users 
         SET name = '${name}', email = '${email}',
             phone = '${phone}', city = '${city}',
-            money = ${money} 
+            money = ${money}, group_id = ${group_id}
         WHERE id = ${id}`;
         return await this.querySQL(sql);
     }

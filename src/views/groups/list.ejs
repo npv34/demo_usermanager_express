@@ -4,7 +4,31 @@
 <body>
     <div class="container">
         <%- include('./../layout/MyNavbar.ejs') %>
-
+        <div class="card mt-2">
+            <div class="card-header ">
+                Group manager
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr>
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Total user of group</td>
+                        <td></td>
+                    </tr>
+                    <% groups.forEach((group, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= group.group_name %></td>
+                            <td><%= group.total_user %></td>
+                            <td>
+                                <a href="/groups/<%= group.group_id %>/users" class="btn btn-primary">View list user</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>

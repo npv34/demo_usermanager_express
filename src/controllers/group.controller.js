@@ -1,6 +1,9 @@
+const groupModel = require("../models/group.model");
+
 class GroupController {
-    static showListGroup(req, res) {
-        res.render('groups/list.ejs');
+    static async showListGroup(req, res) {
+        const groups = await groupModel.getTotalUserOfGroup();
+        res.render('groups/list.ejs', { groups: groups });
     }
 }
 

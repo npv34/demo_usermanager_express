@@ -1,4 +1,4 @@
-const { GET_ALL_GROUP } = require("../constant/sql.query");
+const { GET_ALL_GROUP, GET_ALL_GROUP_WITH_TOTAL_USER } = require("../constant/sql.query");
 const BaseModel = require("./base.model");
 
 class GroupModel extends BaseModel {
@@ -8,6 +8,11 @@ class GroupModel extends BaseModel {
 
     async getAll() {
         const sql = GET_ALL_GROUP;
+        return await this.querySQL(sql);
+    }
+
+    async getTotalUserOfGroup() {
+        const sql = GET_ALL_GROUP_WITH_TOTAL_USER;
         return await this.querySQL(sql);
     }
 }
