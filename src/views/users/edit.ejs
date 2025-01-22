@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ("./../layout/Head.ejs", {title: "Edit user"}) %>
+<body>
+    <div class="container">
+        <%- include ("./../layout/MyNavbar.ejs") %>
+        <div class="card mt-2">
+            <div class="card-header">
+                Edit user
+            </div>
+            <div class="card-body">
+                <form method="post" action="/users/<%= userEdit.id %>/edit">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Name</label>
+                        <input type="text" name="name" value="<%= userEdit.name %>" class="form-control" id="" aria-describedby="emailHelp">
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" name="email" value="<%= userEdit.email %>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Phone</label>
+                      <input type="text" name="phone" value="<%= userEdit.phone %>"  class="form-control" id="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">City</label>
+                        <input type="text" name="city" value="<%= userEdit.city %>"  class="form-control" id="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Money</label>
+                        <input type="number" name="money" value="<%= userEdit.money %>"  class="form-control" id="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Group</label>
+                        <select name="group_id" id="" class="form-select">
+                            <% groups.forEach((group) => { %>
+                                <option value="<%= group.id %>" <%= userEdit.group_id == group.id ? 'selected' : ''  %> ><%= group.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn" href="/users">Cancel</a>
+                  </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
