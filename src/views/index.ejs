@@ -34,8 +34,8 @@
                             <td><%= item.phone %></td>
                             <td><%= item.group_name ? item.group_name : 'No group' %></td>
                             <td>
-                                <a onclick="return confirm('Are you sure?')" href="/users/<%= item.id %>/delete" class="btn btn-danger">Delete</a>
-                                <a href="/users/<%= item.id %>/update" class="btn btn-primary">Edit</a>
+                                <a onclick="return confirm('Are you sure?')" href="/users/<%= item.id %>/delete" class="btn btn-outline-danger">Delete</a>
+                                <a href="/users/<%= item.id %>/update" class="btn btn-outline-primary">Edit</a>
                             </td>
                         </tr>
                     <% }) %>

@@ -22,7 +22,11 @@
                             <td><%= group.group_name %></td>
                             <td><%= group.total_user %></td>
                             <td>
-                                <a href="/groups/<%= group.group_id %>/users" class="btn btn-primary">View list user</a>
+                                <a href="/groups/<%= group.group_id %>/users" class="btn btn-outline-primary">View list user</a>
+                                <a href="/groups/<%= group.group_id %>/delete" class="btn btn-outline-danger">Delete</a>
+                                <a href="/groups/<%= group.group_id %>/delete" class="btn btn-outline-success">Edit</a>
+
+
                             </td>
                         </tr>
                     <% }) %>
